@@ -1,0 +1,8 @@
+# Welcome to the Visual_c_redistribute_aio_good_version
+## Why was this created?
+
+I ran into an issue recently where application installs were failing because they were unable to recognize that certain visual C redistributables were already installed.  Thinking that these particular redistributables had become corrupt, I went into Add or remove programs to uninstall them, and saw that, not only for the redistributable in question, but a couple of others as well, I had 3 entries listed in add or remove programs (2 were for the x86 version and one for x64).  To make sure that the issue was fully resolved, I uninstalled ALL of the visual C redistributables on my machine.  I had then planned on using a certain tool, which just so happens to be the [tool that this project is based off of](http://www.majorgeeks.com/files/details/visual_c_runtime_installer.html) to more quickly reinstall the visual C redistributables.  However, when the installation was complete, not only was the way the visual C redistributables were displayed in Add or Remove Programs different than what the entries looked like when properly installed, but the tool only installed the x86 versions of the visual C redistributables.  As a result, I wrote this tool which does the same thing, but correctly.
+
+## What it does
+
+This tool silently installs all of the visual C redistributables ranging from 2005 to 2017.  It will first determine which visual C redistributables are applicable for the machine it is run on by detecting the processor architecture, and will then proceed to install each visual C redistributables one by one and will finish the task with a restart to finalize the installations.  
